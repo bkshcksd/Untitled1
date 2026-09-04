@@ -19,5 +19,12 @@ public class StudentManagement {
 
         return  (math = science = english)/3.0;
     }
+    public String calculateGrade(double avg){
+        if (avg >=90) return "A";
+        if (avg >=80) return "B";
+        if (avg >=70) return "c";
+        return "F";
+    }
+
 
 }
