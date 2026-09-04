@@ -25,6 +25,15 @@ public class StudentManagement {
         if (avg >=70) return "c";
         return "F";
     }
+    public void displayStudent(String[] data) {
+        double avg = calculateAverage(data);
+
+        System.out.println("Name:" +data[0]);
+        System.out.println("ID:" +data[1]);
+        System.out.println("Avarage:" +avg);
+        System.out.println("Grade:" +calculateGrade(avg));
+    }
+
 
 
 }
