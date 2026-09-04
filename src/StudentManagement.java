@@ -1,3 +1,5 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -33,7 +35,14 @@ public class StudentManagement {
         System.out.println("Avarage:" +avg);
         System.out.println("Grade:" +calculateGrade(avg));
     }
-
-
-
+    public void displayALLStudents(){
+        try(BufferedReader br =new BufferedReader(new FileReader(FILE))){
+            String line;
+            while ((line = br.readLine())!=null){
+                displayStudent(line.split(","));
+            }
+        } catch (IOException e) {
+            System.out.println("error reading file");
+        }
+    }
 }
